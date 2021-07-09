@@ -20,8 +20,8 @@ class OngAdapter(var ongs: List<Ong>, var evento: OngAdapter.Evento) : RecyclerV
         val ong = ongs[position]
 
 
-        holder.binding.txtTitulo.text = ong.nome
-        holder.binding.txtDescricao.text = ong.desc
+        holder.binding.txtNome.text = ong.nome
+        holder.binding.txtDesc.text = ong.desc
 
 
         holder.binding.btnCompartilhar.setOnClickListener { evento.onCompartilharClick(ong) }
@@ -30,7 +30,7 @@ class OngAdapter(var ongs: List<Ong>, var evento: OngAdapter.Evento) : RecyclerV
 
         GlideApp.with(holder.binding.root)
             .load(ong.imagem)
-            .placeholder(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.ong)
             .circleCrop()
             .into(holder.binding.imageView)
     }
